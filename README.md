@@ -69,9 +69,9 @@ src/
 ## 🎨 Sistema de Diseño
 
 ### Paleta de Colores (Basada en Sanitas)
-- **Azul Principal**: `#00BFFF` (Sanitas Blue)
-- **Azul Oscuro**: `#0099CC`
-- **Azul Claro**: `#33CCFF`
+- **blanco Principal**: `#fdfefe` (Sanitas Blue)
+- **Azul Oscuro**: `#2c3e50`
+- **Azul Claro**: `#699e95`
 - **Gradientes**: Implementados para elementos destacados
 
 ### Componentes de UI
@@ -190,9 +190,9 @@ pnpm run test:watch
 ```css
 /* En App.css */
 :root {
-  --sanitas-blue: #00BFFF;
-  --sanitas-blue-dark: #0099CC;
-  --sanitas-blue-light: #33CCFF;
+  --MiPíldora--blanco:#fdfefe;
+  --MiPíldora--: #2c3e50;
+  --MiPíldora--: #699e95;
 }
 ```
 
