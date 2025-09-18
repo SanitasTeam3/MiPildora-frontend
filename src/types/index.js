@@ -101,9 +101,9 @@ export const MEDICATION_FREQUENCY = {
 
 // Endpoints de la API
 export const API_ENDPOINTS = {
-  MEDICATIONS: '/medicamentos',
-  MEDICATION_BY_ID: (id) => `/medicamentos/${id}`,
-  MARK_TAKEN: (id) => `/medicamentos/${id}/tomado`,
+  MEDICATIONS: '/medications',
+  MEDICATION_BY_ID: (id) => `/medications/${id}`,
+  MARK_TAKEN: (id) => `/medications/${id}/tomado`,
   ALLERGIES: '/alergias',
   ALLERGY_BY_ID: (id) => `/alergias/${id}`,
   USER_PROFILE: '/perfil'

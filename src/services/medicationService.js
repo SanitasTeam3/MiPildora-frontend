@@ -1,7 +1,7 @@
 import { API_ENDPOINTS } from '../types';
 
 // Configuración base de la API
-//const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_URL || 'http://localhost:8080';
 
 // Configuración por defecto para las peticiones
 const defaultConfig = {
