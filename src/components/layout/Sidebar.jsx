@@ -57,13 +57,6 @@ const navigationItems = [
     href: '/reportes',
     badge: null
   },
-  {
-    id: 'settings',
-    label: 'Configuración',
-    icon: Settings,
-    href: '/configuracion',
-    badge: null
-  }
 ];
 
 const Sidebar = ({ 
