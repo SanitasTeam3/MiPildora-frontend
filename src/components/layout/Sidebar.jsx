@@ -50,6 +50,13 @@ const navigationItems = [
     href: '/alergias',
     badge: null
   },
+  {
+    id: 'reports',
+    label: 'Reportes',
+    icon: BarChart3,
+    href: '/reportes',
+    badge: null
+  },
 ];
 
 const Sidebar = ({ 
