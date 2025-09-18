@@ -19,7 +19,6 @@ Esta aplicación permite a los usuarios registrar sus medicamentos, programar re
 - ✅ **Arquitectura modular** con componentes reutilizables
 
 ### Funcionalidades Opcionales (Preparadas)
-- 🔄 **Gestión de alergias** con validación cruzada
 - 🔄 **Notificaciones visuales** para horarios de toma
 - 🔄 **Filtros avanzados** (activo vs. histórico)
 - 🔄 **Cálculo de dosis restantes**
@@ -95,23 +94,23 @@ La aplicación está optimizada para múltiples dispositivos:
 ### Endpoints API Preparados
 
 ```javascript
-// Medicamentos
-POST   /medicamentos           // Crear medicamento
-GET    /medicamentos           // Obtener todos los medicamentos
-PUT    /medicamentos/:id       // Actualizar medicamento
-DELETE /medicamentos/:id       // Eliminar medicamento
-PUT    /medicamentos/:id/tomado // Marcar como tomado
 
-// Alergias (Opcional)
-POST   /alergias              // Crear alergia
-GET    /alergias              // Obtener alergias
-PUT    /alergias/:id          // Actualizar alergia
-DELETE /alergias/:id          // Eliminar alergia
+POST   /medicamentos           
+GET    /medicamentos           
+PUT    /medicamentos/:id       
+DELETE /medicamentos/:id      
+PUT    /medicamentos/:id/tomado 
+
+
+POST   /alergias              
+GET    /alergias              
+PUT    /alergias/:id          
+DELETE /alergias/:id          
 ```
 
 ### Configuración de API
 ```javascript
-// En .env
+
 REACT_APP_API_URL=http://localhost:3001/api
 ```
 
@@ -123,26 +122,26 @@ REACT_APP_API_URL=http://localhost:3001/api
 
 ### Instalación
 ```bash
-# Clonar el repositorio
+
 git clone [URL_DEL_REPOSITORIO]
 cd sanitas-medication-app
 
-# Instalar dependencias
+
 pnpm install
 
-# Iniciar servidor de desarrollo
+
 pnpm run dev
 
-# Construir para producción
+
 pnpm run build
 
-# Previsualizar build de producción
+
 pnpm run preview
 ```
 
 ### Variables de Entorno
 ```bash
-# .env
+
 REACT_APP_API_URL=http://localhost:3001/api
 ```
 
@@ -150,13 +149,13 @@ REACT_APP_API_URL=http://localhost:3001/api
 
 ### Estructura de Testing (Preparada)
 ```bash
-# Ejecutar tests unitarios
+
 pnpm run test
 
-# Ejecutar tests con cobertura
+
 pnpm run test:coverage
 
-# Ejecutar tests en modo watch
+
 pnpm run test:watch
 ```
 
@@ -188,7 +187,7 @@ pnpm run test:watch
 
 ### Personalización de Tema
 ```css
-/* En App.css */
+
 :root {
   --MiPíldora--background:#fdfefe;
   --MiPíldora--foreground: #2c3e50;
@@ -198,14 +197,12 @@ pnpm run test:watch
 
 ### Configuración de Tailwind
 ```javascript
-// tailwind.config.js personalizado disponible
-// Incluye colores de Sanitas y configuraciones responsive
+
 ```
 
 ## 🚀 Despliegue
 
 ### Opciones de Despliegue
-- **Vercel**: Configuración automática con Git
 - **Netlify**: Deploy continuo
 - **GitHub Pages**: Para demos estáticas
 - **Docker**: Containerización disponible
@@ -213,7 +210,7 @@ pnpm run test:watch
 ### Build de Producción
 ```bash
 pnpm run build
-# Genera carpeta dist/ lista para despliegue
+
 ```
 
 ## 🤝 Contribución
