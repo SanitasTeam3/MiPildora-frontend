@@ -69,7 +69,7 @@ src/
 ## 🎨 Sistema de Diseño
 
 ### Paleta de Colores (Basada en Sanitas)
-- **blanco Principal**: `#fdfefe` (Sanitas Blue)
+- **Blanco Principal**: `#fdfefe` (Sanitas Blue)
 - **Azul Oscuro**: `#2c3e50`
 - **Azul Claro**: `#699e95`
 - **Gradientes**: Implementados para elementos destacados
@@ -190,9 +190,9 @@ pnpm run test:watch
 ```css
 /* En App.css */
 :root {
-  --MiPíldora--blanco:#fdfefe;
-  --MiPíldora--: #2c3e50;
-  --MiPíldora--: #699e95;
+  --MiPíldora--background:#fdfefe;
+  --MiPíldora--foreground: #2c3e50;
+  --MiPíldora--popover: #699e95;
 }
 ```
 
