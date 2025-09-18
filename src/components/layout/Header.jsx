@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Bell, Menu, Moon, Sun, User } from 'lucide-react';
+import { Menu, Moon, Sun, User, LogIn, UserPlus } from 'lucide-react'; // Importamos nuevos íconos
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,24 +8,38 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import sanitasLogo from '../../assets/sanitas-logo.png';
+import LogoMiPíldora from '../../assets/LogoMiPíldora.png';
 
 const Header = ({ 
   onMenuToggle, 
   darkMode, 
-  onDarkModeToggle, 
-  pendingMedications = 0,
-  onNotificationsClick 
+  onDarkModeToggle
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // <--- Nuevo estado para el login
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
     onMenuToggle?.();
   };
 
+  const handleLogout = () => {
+    // Aquí pondrías la lógica real para cerrar sesión
+    setIsLoggedIn(false);
+  };
+
+  const handleLogin = () => {
+    // Aquí pondrías la lógica para redirigir a la página de login
+    alert('Redireccionando a la página de login');
+  };
+
+  const handleRegister = () => {
+    // Aquí pondrías la lógica para redirigir a la página de registro
+    alert('Redireccionando a la página de registro');
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo y título */}
@@ -43,12 +56,12 @@ const Header = ({
             
             <div className="flex items-center space-x-3">
               <img 
-                src={sanitasLogo} 
+                src={LogoMiPíldora} 
                 alt="Sanitas" 
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
-              <div className="hidden sm:block">
-                <h1 className="text-lg font-semibold text-foreground">
+              <div className="hidden sm:block" >
+                <h1 className="text-lg font-semibold text-foreground ">
                   Recordatorio de Medicación
                 </h1>
                 <p className="text-xs text-muted-foreground">
@@ -60,27 +73,6 @@ const Header = ({
 
           {/* Acciones del header */}
           <div className="flex items-center space-x-2">
-            {/* Notificaciones */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="relative"
-              onClick={onNotificationsClick}
-            >
-              <Bell className="h-5 w-5" />
-              {pendingMedications > 0 && (
-                <Badge 
-                  variant="destructive" 
-                  className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs flex items-center justify-center"
-                >
-                  {pendingMedications > 9 ? '9+' : pendingMedications}
-                </Badge>
-              )}
-              <span className="sr-only">
-                Notificaciones {pendingMedications > 0 && `(${pendingMedications})`}
-              </span>
-            </Button>
-
             {/* Toggle modo oscuro */}
             <Button
               variant="ghost"
@@ -106,21 +98,30 @@ const Header = ({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Mi Perfil</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Configuración
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Ayuda
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-red-600">
-                  Cerrar Sesión
-                </DropdownMenuItem>
+                {isLoggedIn ? (
+                  <>
+                    <DropdownMenuItem>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>Mi Perfil</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout}>
+                      Cerrar Sesión
+                    </DropdownMenuItem>
+                  </>
+                ) : (
+                  <>
+                    <DropdownMenuItem onClick={handleLogin}>
+                      <LogIn className="mr-2 h-4 w-4" />
+                      <span>Iniciar Sesión</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleRegister}>
+                      <UserPlus className="mr-2 h-4 w-4" />
+                      <span>Registrarse</span>
+                    </DropdownMenuItem>
+                  </>
+                )}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
