@@ -12,7 +12,7 @@ export const useMedications = () => {
     setError(null);
     
     try {
-      const data = await medicationService.getAll();
+      const data = await medicationService.getAllMedications();
       setMedications(data || []);
     } catch (err) {
       console.error('Error loading medications:', err);
@@ -33,7 +33,7 @@ export const useMedications = () => {
     setError(null);
     
     try {
-      const newMedication = await medicationService.create(medicationData);
+      const newMedication = await medicationService.createMedication(medicationData);
       setMedications(prev => [...prev, newMedication]);
       return { success: true, data: newMedication };
     } catch (err) {
@@ -55,7 +55,7 @@ export const useMedications = () => {
     setError(null);
     
     try {
-      const updatedMedication = await medicationService.update(id, medicationData);
+      const updatedMedication = await medicationService.updateMedication(id, medicationData);
       setMedications(prev => 
         prev.map(med => med.id === id ? updatedMedication : med)
       );
@@ -79,7 +79,7 @@ export const useMedications = () => {
     setError(null);
     
     try {
-      await medicationService.delete(id);
+      await medicationService.deleteMedication(id);
       setMedications(prev => prev.filter(med => med.id !== id));
       return { success: true };
     } catch (err) {
