@@ -41,79 +41,51 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* src/app.css o src/globals.css */
+
 :root {
-  --radius: 0.75rem;
-  /* Colores basados en el logo de Sanitas */
-  --sanitas-blue: #00BFFF;
-  --sanitas-blue-dark: #0099CC;
-  --sanitas-blue-light: #33CCFF;
-  
-  /* Variables de tema actualizadas con colores de Sanitas */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.65 0.25 210); /* Sanitas blue */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.01 210);
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.96 0.01 210);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.96 0.01 210);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0.01 210);
-  --input: oklch(0.922 0.01 210);
-  --ring: oklch(0.65 0.25 210);
-  --chart-1: oklch(0.65 0.25 210);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.65 0.25 210);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.01 210);
-  --sidebar-accent-foreground: oklch(0.145 0 0);
-  --sidebar-border: oklch(0.922 0.01 210);
-  --sidebar-ring: oklch(0.65 0.25 210);
+  --background: #fdfefe; /* Blanco muy sutil, casi gris */
+  --foreground: #2c3e50; /* Un azul muy oscuro para el texto, casi negro */
+  --card: #ffffff; /* Blanco puro para tarjetas y elementos de superficie */
+  --card-foreground: #2c3e50;
+  --popover: #699e95;
+  --popover-foreground: #2c3e50;
+  --primary: #008080; /* Un tono de verde azulado oscuro, tomado de tu logo */
+  --primary-foreground: #ffffff; /* Texto blanco para el botón principal */
+  --secondary: #3498db; /* Un azul brillante, como acento del logo */
+  --secondary-foreground: #ffffff;
+  --muted: #f4f6f9; /* Gris muy claro para elementos sutiles */
+  --muted-foreground: #7f8c8d; /* Gris para texto secundario */
+  --accent: #1abc9c; /* Un verde de acento para destacar */
+  --accent-foreground: #ffffff;
+  --destructive: #c0392b; /* Rojo para acciones destructivas */
+  --destructive-foreground: #ffffff;
+  --border: #e2e4e8; /* Un gris claro para los bordes */
+  --input: #e2e4e8; /* Borde del input */
+  --ring: #008080; /* Anillo de foco del color primario */
+  --radius: 0.5rem;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.75 0.25 210); /* Sanitas blue más claro para modo oscuro */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0.02 210);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0.02 210);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0.02 210);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.75 0.25 210);
-  --chart-1: oklch(0.75 0.25 210);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.75 0.25 210);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0.02 210);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.75 0.25 210);
+  --background: #111b27; /* Un azul-negro muy oscuro para el fondo */
+  --foreground: #ecf0f1; /* Gris claro para el texto */
+  --card: #1c2a38;
+  --card-foreground: #ecf0f1;
+  --popover: #111b27;
+  --popover-foreground: #ecf0f1;
+  --primary: #2ecc71; /* Un verde brillante para contraste en modo oscuro */
+  --primary-foreground: #111b27;
+  --secondary: #3498db;
+  --secondary-foreground: #ecf0f1;
+  --muted: #2c3e50;
+  --muted-foreground: #7f8c8d;
+  --accent: #1abc9c;
+  --accent-foreground: #111b27;
+  --destructive: #e74c3c;
+  --destructive-foreground: #ecf0f1;
+  --border: #2c3e50;
+  --input: #2c3e50;
+  --ring: #2ecc71;
 }
 
 @layer base {
@@ -156,4 +128,13 @@
   .mobile-text {
     font-size: 0.875rem;
   }
+
+  .btn-header-lg {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 }
